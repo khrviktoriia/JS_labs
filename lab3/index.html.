@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
     <meta charset="utf-8">
-    <title>My application</title>
+    <title>Лабораторна робота 3 - Христан Вікторія</title>
 </head>
 <body>
-    <h1>My application</h1>
-    <h2>More details in the console</h2>
+    <h1>Лабораторна робота 3</h1>
+    <p>Виконала:<b>Христан Вікторія</b></p>
+<hr>
+<p>Для перевірки результатів</p>
+</ol>
+    <li>Відкрийте консоль браузера(клавіша <b>F12</b>). </li>
+    <li>Перейдіть на вкладку <b>Console</b>.</li>
+</ol>
+
     <script src="SpeakHello.js"></script>
     <script src="SpeakGoodBye.js"></script>
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
