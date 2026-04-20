@@ -6,17 +6,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Pixel Hunt</h1>
-    
     <div class="controls">
-        <label>Choose difficulty:</label>
+        <label>Difficulty:</label>
         <select id="difficulty">
             <option value="10">Lazy (10s)</option>
             <option value="4">Normal (4s)</option>
             <option value="1">Catch me if you can (1s)</option>
         </select>
 
-        <label>Choose color:</label>
+        <label>Color:</label>
         <select id="colorSelect">
             <option value="red">Red</option>
             <option value="blue">Blue</option>
@@ -24,6 +22,7 @@
         </select>
 
         <button id="startBtn">Start</button>
+        <span id="scoreBoard">Score: 0</span>
     </div>
 
     <div id="gameArea"></div>
