@@ -6,55 +6,59 @@ const scoreDisplay = document.getElementById('scoreBoard');
 
 let score = 0;
 let gameActive = false;
-let gameTimer;
+let pixelTimer; // Це таймер, який ми будемо скидати
 
 function createPixel() {
     if (!gameActive) return;
 
-    // Видаляємо попередній піксель
+    // 1. ОЧИЩЕННЯ: Видаляємо старий піксель та СКИДАЄМО таймер
     const oldPixel = document.getElementById('pixel');
     if (oldPixel) oldPixel.remove();
+    clearTimeout(pixelTimer); 
 
+    // 2. СТВОРЕННЯ: Новий піксель
     const pixel = document.createElement('div');
     pixel.id = 'pixel';
     pixel.style.backgroundColor = colorSelect.value;
 
-    // Розраховуємо позицію
+    // Позиціонування
     const maxX = gameArea.clientWidth - 30;
     const maxY = gameArea.clientHeight - 30;
-    
-    const x = Math.floor(Math.random() * maxX);
-    const y = Math.floor(Math.random() * maxY);
+    pixel.style.left = Math.floor(Math.random() * maxX) + 'px';
+    pixel.style.top = Math.floor(Math.random() * maxY) + 'px';
 
-    pixel.style.left = x + 'px';
-    pixel.style.top = y + 'px';
-
+    // 3. КЛІК: Якщо встигла — додаємо бал і запускаємо процес заново
     pixel.addEventListener('click', (e) => {
-        e.stopPropagation(); // Запобігаємо зайвим спрацюванням
-        if (gameActive) {
-            score++;
-            scoreDisplay.textContent = `Score: ${score}`;
-            createPixel();
-        }
+        e.stopPropagation();
+        score++;
+        scoreDisplay.textContent = `Score: ${score}`;
+        createPixel(); // Створюємо новий піксель і скидаємо час
     });
 
     gameArea.appendChild(pixel);
+
+    // 4. ТАЙМЕР: Якщо цей код спрацює раніше за клік — гра закінчена
+    const timeLimit = parseInt(difficultySelect.value) * 1000;
+    pixelTimer = setTimeout(() => {
+        endGame();
+    }, timeLimit);
+}
+
+function endGame() {
+    gameActive = false;
+    const pixel = document.getElementById('pixel');
+    if (pixel) pixel.remove();
+    alert(`Гру закінчено! Ви не встигли натиснути на піксель. Ваш рахунок: ${score}`);
 }
 
 startBtn.addEventListener('click', () => {
+    // Початок нової гри
     score = 0;
     scoreDisplay.textContent = `Score: 0`;
     gameActive = true;
     
-    const timeLimit = parseInt(difficultySelect.value) * 1000;
-
-    createPixel();
-
-    clearTimeout(gameTimer);
-    gameTimer = setTimeout(() => {
-        gameActive = false;
-        const pixel = document.getElementById('pixel');
-        if (pixel) pixel.remove();
-        alert(`Час вийшов! Ваш результат: ${score}`);
-    }, timeLimit);
+    // Очищуємо будь-які старі таймери перед стартом
+    clearTimeout(pixelTimer);
+    
+    createPixel(); 
 });
