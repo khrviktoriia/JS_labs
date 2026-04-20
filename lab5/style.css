@@ -1,35 +1,39 @@
 body {
     margin: 0;
-    overflow: hidden; /* Щоб не було прокрутки */
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .controls {
-    padding: 10px;
-    background: #eee;
+    padding: 15px;
+    background: #f4f4f4;
+    border-bottom: 2px solid #ddd;
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
 }
 
 #gameArea {
-    width: 100vw;   /* 100% ширини екрана */
-    height: 90vh;  /* 90% висоти екрана (залишаємо місце під панель) */
+    flex-grow: 1; /* Заповнює весь вільний простір */
     position: relative;
-    background-color: #f9f9f9;
-    border-top: 2px solid #ccc;
+    background-color: #fff;
+    overflow: hidden;
+    cursor: crosshair;
 }
 
 #pixel {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     cursor: pointer;
-    transition: all 0.1s; /* Легка анімація появи */
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
 #scoreBoard {
-    font-size: 20px;
     font-weight: bold;
-    margin-left: 20px;
+    font-size: 1.2em;
+    color: #333;
 }
