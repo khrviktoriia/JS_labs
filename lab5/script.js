@@ -2,44 +2,77 @@ const startBtn = document.getElementById('startBtn');
 const difficultySelect = document.getElementById('difficulty');
 const colorSelect = document.getElementById('colorSelect');
 const gameArea = document.getElementById('gameArea');
+const scoreDisplay = document.getElementById('scoreBoard');
 
-function createPixel(color) {
-    // Видаляємо старий піксель, якщо він є
+let score = 0;          // Поточний рахунок
+let gameActive = false; // Статус гри (чи триває вона зараз)
+let gameTimer;          // Змінна для керування таймером
+
+/**
+ * Функція для створення та розміщення "пікселя" на полі
+ */
+function createPixel() {
+    if (!gameActive) return;
+
     const oldPixel = document.getElementById('pixel');
     if (oldPixel) oldPixel.remove();
 
     const pixel = document.createElement('div');
     pixel.id = 'pixel';
-    pixel.style.backgroundColor = color;
+    
+    // Встановлюємо колір, який вибрав користувач
+    pixel.style.backgroundColor = colorSelect.value;
 
-    // Випадкові координати
-    const x = Math.floor(Math.random() * (gameArea.clientWidth - 20));
-    const y = Math.floor(Math.random() * (gameArea.clientHeight - 20));
+    // Розраховуємо випадкові координати в межах ігрового поля
+    // Віднімаємо 30 пікселів, щоб квадрат не виходив за межі поля
+    const maxX = gameArea.clientWidth - 30;
+    const maxY = gameArea.clientHeight - 30;
+    
+    const x = Math.floor(Math.random() * maxX);
+    const y = Math.floor(Math.random() * maxY);
 
     pixel.style.left = x + 'px';
     pixel.style.top = y + 'px';
 
-    // Подія при кліку на піксель
+    // Обробка натискання на піксель
     pixel.addEventListener('click', () => {
-        alert('You caught it!');
-        pixel.remove();
+        if (gameActive) {
+            score++; // Збільшуємо рахунок
+            scoreDisplay.textContent = `Score: ${score}`; // Оновлюємо текст на екрані
+            createPixel(); // Відразу створюємо наступний піксель
+        }
     });
 
     gameArea.appendChild(pixel);
 }
 
+/**
+ * Обробник натискання кнопки Start
+ */
 startBtn.addEventListener('click', () => {
-    const timeLimit = parseInt(difficultySelect.value) * 1000; 
-    const selectedColor = colorSelect.value;
+    // Скидаємо гру до початкового стану
+    score = 0;
+    scoreDisplay.textContent = `Score: 0`;
+    gameActive = true;
+    
+    // Отримуємо час гри зі списку (переводимо секунди у мілісекунди)
+    const seconds = parseInt(difficultySelect.value);
+    const timeLimit = seconds * 1000;
 
-    createPixel(selectedColor);
+    // Запускаємо перший піксель
+    createPixel();
 
-    // Таймер завершення гри
-    setTimeout(() => {
+    // Очищуємо старий таймер, якщо користувач натиснув "Start" повторно
+    clearTimeout(gameTimer);
+
+    // Встановлюємо таймер завершення гри
+    gameTimer = setTimeout(() => {
+        gameActive = false; // Зупиняємо логіку гри
+        
         const pixel = document.getElementById('pixel');
-        if (pixel) {
-            pixel.remove();
-            alert('Time is up! Game over.');
-        }
+        if (pixel) pixel.remove(); // Видаляємо останній піксель з екрана
+        
+        // Виводимо результат
+        alert(`Гру закінчено! Ваш результат: ${score} очок.`);
     }, timeLimit);
 });
