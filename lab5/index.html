@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Pixel Hunt</title>
+    <title>Pixel Hunt - Lab 5</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,10 +19,15 @@
             <option value="red">Red</option>
             <option value="blue">Blue</option>
             <option value="green">Green</option>
+            <option value="orange">Orange</option>
         </select>
 
-        <button id="startBtn">Start</button>
-        <span id="scoreBoard">Score: 0</span>
+        <button id="startBtn">Start Game</button>
+        
+        <div class="stats">
+            <span>Score: <b id="scoreBoard">0</b></span>
+            <span style="margin-left: 20px;">Time left: <b id="timeLeft">0</b>s</span>
+        </div>
     </div>
 
     <div id="gameArea"></div>
