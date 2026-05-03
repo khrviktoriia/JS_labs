@@ -1,1 +1,5 @@
-
+[
+  { "id": 1, "name": "Coffee", "shortname": "coffee", "notes": "Freshly roasted beans." },
+  { "id": 2, "name": "Hot Food", "shortname": "food", "notes": "Breakfasts and snacks." },
+  { "id": 3, "name": "Desserts", "shortname": "desserts", "notes": "Sweet treats for your coffee." }
+]
