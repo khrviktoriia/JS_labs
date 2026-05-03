@@ -1,0 +1,9 @@
+{
+  "category_name": "Coffee",
+  "items": [
+    { "id": 1, "name": "Espresso", "description": "Strong and classic.", "price": 40 },
+    { "id": 2, "name": "Latte", "description": "Milk with espresso shot.", "price": 65 },
+    { "id": 3, "name": "Cappuccino", "description": "Foamy milk delight.", "price": 60 },
+    { "id": 4, "name": "Flat White", "description": "Double shot with microfoam.", "price": 75 }
+  ]
+}
