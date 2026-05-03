@@ -1,1 +1,64 @@
+body {
+    background-color: #f8f9fa; /* Світло-сірий фон */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4b3832; /* Темно-коричневий колір тексту */
+}
 
+.navbar {
+    background-color: #3c2f2f !important; /* Кавовий колір */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover; /* Щоб картинка не розтягувалася */
+    background-color: #e9ecef;
+}
+
+
+h1, h2 {
+    font-weight: 700;
+    color: #3c2f2f;
+    margin-bottom: 1.5rem;
+}
+
+
+.list-group-item {
+    border-radius: 10px !important;
+    margin-bottom: 8px;
+    border: 1px solid #dee2e6;
+    transition: background-color 0.2s;
+}
+
+.list-group-item:hover {
+    background-color: #fff4e6; /* Світло-оранжевий при наведенні */
+}
+
+.list-group-item-warning {
+    background-color: #ffc107;
+    color: #000;
+    font-weight: bold;
+    border: none;
+}
+
+
+#main-content {
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    min-height: 400px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
