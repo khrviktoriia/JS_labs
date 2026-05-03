@@ -1,0 +1,33 @@
+{
+  "category_name": "Hot Food",
+  "items": [
+    {
+      "id": 201,
+      "name": "Chicken Club Sandwich",
+      "shortname": "chicken-club",
+      "description": "Grilled chicken, bacon, tomato, and fresh lettuce. Lorem ipsum dolor sit amet.",
+      "price": 120
+    },
+    {
+      "id": 202,
+      "name": "Avocado Toast",
+      "shortname": "avo-toast",
+      "description": "Whole grain bread with smashed avocado and poached egg. Lorem ipsum.",
+      "price": 145
+    },
+    {
+      "id": 203,
+      "name": "Ham & Cheese Croissant",
+      "shortname": "ham-croissant",
+      "description": "Warm buttery croissant with premium ham and melted cheddar.",
+      "price": 95
+    },
+    {
+      "id": 204,
+      "name": "Quiche Lorraine",
+      "shortname": "quiche",
+      "description": "Traditional French savory tart with bacon and cream cheese.",
+      "price": 110
+    }
+  ]
+}
