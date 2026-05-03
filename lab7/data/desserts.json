@@ -1,0 +1,33 @@
+{
+  "category_name": "Desserts",
+  "items": [
+    {
+      "id": 301,
+      "name": "New York Cheesecake",
+      "shortname": "cheesecake",
+      "description": "Creamy classic cheesecake with a graham cracker crust. Lorem ipsum.",
+      "price": 85
+    },
+    {
+      "id": 302,
+      "name": "Chocolate Brownie",
+      "shortname": "brownie",
+      "description": "Rich and fudgy dark chocolate brownie with walnuts.",
+      "price": 55
+    },
+    {
+      "id": 303,
+      "name": "Apple Strudel",
+      "shortname": "strudel",
+      "description": "Warm apple pastry with cinnamon and raisins. Served with love.",
+      "price": 70
+    },
+    {
+      "id": 304,
+      "name": "Macaron Set",
+      "shortname": "macarons",
+      "description": "Box of 3 colorful French macarons (pistachio, raspberry, vanilla).",
+      "price": 90
+    }
+  ]
+}
