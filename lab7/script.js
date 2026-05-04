@@ -46,5 +46,4 @@ function loadCategory(shortname) {
         });
 }
 
-// Подія для кнопки "Catalog" у навігації
 document.getElementById('catalog-btn').addEventListener('click', loadCatalog);
