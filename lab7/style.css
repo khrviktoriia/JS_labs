@@ -1,11 +1,11 @@
 body {
-    background-color: #f8f9fa; /* Світло-сірий фон */
+    background-color: #f8f9fa; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #4b3832; /* Темно-коричневий колір тексту */
+    color: #4b3832; 
 }
 
 .navbar {
-    background-color: #3c2f2f !important; /* Кавовий колір */
+    background-color: #3c2f2f !important;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -24,7 +24,7 @@ body {
 
 .card-img-top {
     height: 180px;
-    object-fit: cover; /* Щоб картинка не розтягувалася */
+    object-fit: cover; 
     background-color: #e9ecef;
 }
 
@@ -44,7 +44,7 @@ h1, h2 {
 }
 
 .list-group-item:hover {
-    background-color: #fff4e6; /* Світло-оранжевий при наведенні */
+    background-color: #fff4e6; 
 }
 
 .list-group-item-warning {
