@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+    <nav class="navbar">
+        <div class="logo">Лабораторна №8</div>
+        
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#">Головна</a></li>
+            <li><a href="#">Проєкти</a></li>
+            <li><a href="#">Послуги</a></li>
+            <li><a href="#">Команда</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="carousel">
+        <div class="carousel-track-container">
+            <ul class="carousel-track">
+                <li class="carousel-slide active-slide">
+                    <img src="https://placehold.co/1200x500?text=Slide+1" alt="">
+                </li>
+                <li class="carousel-slide">
+                    <img src="https://placehold.co/1200x500?text=Slide+2" alt="">
+                </li>
+                <li class="carousel-slide">
+                    <img src="https://placehold.co/1200x500?text=Slide+3" alt="">
+                </li>
+            </ul>
+        </div>
+        
+        <button class="btn btn-left">❮</button>
+        <button class="btn btn-right">❯</button>
+
+        <div class="carousel-nav">
+            <button class="indicator active-dot"></button>
+            <button class="indicator"></button>
+            <button class="indicator"></button>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="large-display">
+            <h2>Large Device Content (>=768px)</h2>
+            <div class="img-grid">
+                <img src="https://placehold.co/400x300?text=Large+Img+1" alt="">
+                <img src="https://placehold.co/400x300?text=Large+Img+2" alt="">
+                <img src="https://placehold.co/400x300?text=Large+Img+3" alt="">
+            </div>
+        </div>
+
+        <div class="medium-display">
+            <h2>Medium Device Content (<768px)</h2>
+            <div class="img-grid">
+                <img src="https://placehold.co/300x200?text=Medium+Img+1" alt="">
+                <img src="https://placehold.co/300x200?text=Medium+Img+2" alt="">
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
