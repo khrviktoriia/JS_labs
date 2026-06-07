@@ -1,8 +1,7 @@
-console.log("=== ІНСТРУКЦІЯ З ВИКОРИСТАННЯ ===");
+console.log("ІНСТРУКЦІЯ З ВИКОРИСТАННЯ");
 console.log("Функція обчислює прямокутний трикутник за двома елементами.");
 console.log("Виклик: triangle(значення1, 'тип1', значення2, 'тип2')");
 console.log("Допустимі типи: 'leg', 'hypotenuse', 'adjacent angle', 'opposite angle', 'angle'");
-console.log("=================================");
 
 function triangle(val1, type1, val2, type2) {
     if (val1 === undefined || type1 === undefined || val2 === undefined || type2 === undefined) {
